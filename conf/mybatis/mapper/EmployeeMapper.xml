@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 名称空间为接口的全类名 -->
+<mapper namespace="com.zc.cris.mybatis.dao.EmployeeMapper">
+
+	<!-- id：和接口的对应方法绑定 public Employee getById(Integer id); -->
+	<select id="getById" resultType="com.zc.cris.mybatis.bean.Employee">
+		select
+		id,name,email,gender from tb_employee where id = #{id}
+	</select>
+	
+	<!-- public List<Employee> getEmps(); -->
+	<select id="getEmps" resultType="com.zc.cris.mybatis.bean.Employee">
+		select
+		* from tb_employee
+	</select>
+
+</mapper>

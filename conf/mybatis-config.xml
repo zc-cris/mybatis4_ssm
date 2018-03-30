@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 2. settings 标签包含了很多重要的mybatis运行信息 setting：表示每一个设置项 name：设置名 value:设置项的取值 -->
+	<settings>
+		<!-- 开启驼峰命名自动匹配：如果数据库的字段名为emp_name, javaBean 的对应属性名为empName，那么无需设置别名，mybatis会自动映射 -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<!-- 防止oracle数据库无法 识别null 值 -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<!-- 开启懒加载模式 -->
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<!-- 关掉迫切加载，即按照需求加载属性，而不是把所有属性一次性全部加载 -->
+		<setting name="aggressiveLazyLoading" value="false"/>
+		<!-- 开启全局缓存 -->
+		<setting name="cacheEnabled" value="true"/>
+	</settings>
+
+	<!-- 5. databaseIdProvider:支持多数据库厂商 type："DB_VENDOR",默认即可 作用就是得到不同数据库的标识：MySQL,Oracle，SQL 
+		Server ... -->
+	<databaseIdProvider type="DB_VENDOR">
+		<!-- 如果对数据库厂商的标识不喜欢，可以自己起别名 -->
+		<property name="MySQL" value="mysql" />
+		<property name="Oracle" value="oracle" />
+		<property name="SQL Server" value="sqlserver" />
+	</databaseIdProvider>
+	
+</configuration>
