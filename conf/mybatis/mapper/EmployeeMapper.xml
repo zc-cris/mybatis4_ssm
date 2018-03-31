@@ -5,6 +5,12 @@
 <!-- 名称空间为接口的全类名 -->
 <mapper namespace="com.zc.cris.mybatis.dao.EmployeeMapper">
 
+	<!-- public void updateEmp(Employee employee); -->
+	<update id="updateEmp">
+		update tb_employee set name = #{name}
+		where id = #{id}
+	</update>
+
 	<!-- id：和接口的对应方法绑定 public Employee getById(Integer id); -->
 	<select id="getById" resultType="com.zc.cris.mybatis.bean.Employee">
 		select

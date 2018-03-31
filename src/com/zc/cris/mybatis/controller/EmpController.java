@@ -23,4 +23,10 @@ public class EmpController {
 		return "list";
 	}
 	
+	@RequestMapping("update")
+	public String updateEmp() {
+		empService.updateEmp();
+		return "success";
+	}
+	
 }

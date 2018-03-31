@@ -9,6 +9,7 @@ public interface EmployeeMapper {
 	public Employee getById(Integer id);
 
 	public List<Employee> getEmps();
-	
+
+	public void updateEmp(Employee employee);
 	
 }
